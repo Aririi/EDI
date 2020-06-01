@@ -14,6 +14,6 @@ function redstoneCheck()
     alarm.activate()
   else
     alarm.deactivate()
-    gpu.setBackground(0x000000)
+    gpu.setBackground(0x000001)
   end
 end
