@@ -1,20 +1,20 @@
 -- Visual widget for P2P tunnels based off of provided coordinates
 local component = require("component");
 local event = require("event");
-local AR = require("./libAR.lua");
+-- local AR = require("./libAR.lua");
 local glasses = component.glasses;
 
 function connection(glasses, label, inXYZ, outXYZ, isUsed)
   -- To be used for determining if contains output counterpart
   isUsed = isUsed or nil;
   -- Renders the box to show when looking at the given tunnel
-  local inTunnel = AR.cube(glasses, inXYZ.x, inXYZ.y, inXYZ.z, {r=237, g=237, b=237, a=0.3}, 0.7);
+  local inTunnel = AR.cube(glasses, inXYZ.x, inXYZ.y, inXYZ.z, {r=237, g=237, b=237, a=0.3}, {x = 0.7, y = 0.7, z = 0.7});
   inTunnel.setViewDistance(4);
   inTunnel.setLookingAt(inXYZ.x, inXYZ.y, inXYZ.z);
   inTunnel.setLookingAt(true);
   inTunnel.setVisibleThroughObjects(true);
   -- Renders statistic text of the tunnel being looked at
-  local inTunnelInfo =  AR.worldText(glasses, " ", inXYZ.x+0.5, inXYZ.y+0.5, inXYZ.z+0.5, {r = 200, g = 200, b = 200, a = 0.65}, 0.03);
+  local inTunnelInfo =  AR.worldText(glasses, " ", inXYZ.x+0.5, inXYZ.y+0.5, inXYZ.z+0.5, {r = 200, g = 200, b = 200, a = 0.65}, {x = 0.03, y = 0.03, z = 0.03});
   inTunnelInfo.setViewDistance(4);
   inTunnelInfo.setLookingAt(inXYZ.x, inXYZ.y, inXYZ.z);
   inTunnelInfo.setLookingAt(true);
@@ -28,7 +28,7 @@ function connection(glasses, label, inXYZ, outXYZ, isUsed)
       inTunnelInfo.setColor(180/255, 180/255, 180/255)
     end
   -- Renders labelling text for tunnel in view
-  local inTunnelName = AR.worldText(glasses, label, inXYZ.x+0.5, inXYZ.y+0.35, inXYZ.z+0.5, {r = 200, g = 200, b = 200, a = 0.65}, 0.032)
+  local inTunnelName = AR.worldText(glasses, label, inXYZ.x+0.5, inXYZ.y+0.35, inXYZ.z+0.5, {r = 200, g = 200, b = 200, a = 0.65}, {x = 0.032, y = 0.032, z = 0.032})
   inTunnelName.setViewDistance(4);
   inTunnelName.setLookingAt(inXYZ.x, inXYZ.y, inXYZ.z);
   inTunnelName.setLookingAt(true);
@@ -100,5 +100,5 @@ function P2P.P2PConnections(glasses)
       connection(glasses, "Misc I/O 2", {x=901, y=67, z=1569}, {{x=909, y=67, z=1567}})
   --  connection(glasses, "", {x=, y=, z=}, {{x=, y=, z=}})
   end
-  
+
 return P2P
