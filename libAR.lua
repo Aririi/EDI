@@ -1,11 +1,11 @@
---library for OpenGlasses 2 AR functions
+-- Library for OpenGlasses 2 AR functions
 local component = require("component");
 local event = require("event");
 local glasses = component.glasses;
 
 AR = {};
---enter coords of your glasses terminal here
---used for absolute coordinate usage w/o navigation upgrade
+-- enter coords of your glasses terminal here
+-- used for absolute coordinate usage w/o navigation upgrade
 local ARterminal = {x = 915, y = 41, z = 1525};
 
 function AR.cube(glasses, x, y, z, color, scale);
@@ -30,6 +30,6 @@ function AR.worldText(glasses, label, x, y, z, color, scale)
 end
 
 
---test commands
-AR.cube(glasses, 921, 42, 1529, {r = 40, g = 40, b = 40, a =0.5});
-AR.worldText(glasses, "Test 01!", 921, 42, 1529, {r = 80, g = 80, b = 80, a = 0.75});
+-- Test Commands
+-- AR.cube(glasses, 921, 42, 1529, {r = 40, g = 40, b = 40, a =0.5}, 0.8);
+-- AR.worldText(glasses, "Test 01!", 921, 42, 1529, {r = 80, g = 80, b = 80, a = 0.75}, 0.05);
