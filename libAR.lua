@@ -31,5 +31,5 @@ end
 
 
 --test commands
-AR.cube(glasses, 921, 42, 1529, {40, 40, 40, 0.5});
-AR.worldText(glasses, "Test 01!", 921, 42, 1529, {80, 80, 80, 0.75});
+AR.cube(glasses, 921, 42, 1529, {r = 40, g = 40, b = 40, a =0.5});
+AR.worldText(glasses, "Test 01!", 921, 42, 1529, {r = 80, g = 80, b = 80, a = 0.75});
